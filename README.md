@@ -1,2 +1,2 @@
 # Genetic-algorithm-8queens
-![some picture](/images/1.png)
+![some picture](https://github.com/NelsonRomaine/Genetic-algorithm-8queens/blob/master/Images/1.png)

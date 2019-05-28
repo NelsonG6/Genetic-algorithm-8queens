@@ -246,7 +246,7 @@ namespace _8QueensApp
                 //Get the queen height stored at the ith position of our 2D board-array
                 current_column = board_to_display[i];
                 //i is the row
-                board_pictureboxes[i][current_column].Image = Image.FromFile("queen.png");
+                board_pictureboxes[i][current_column].Image = Image.FromFile("images\\queen.png");
             }
         }
 

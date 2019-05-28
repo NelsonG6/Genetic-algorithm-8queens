@@ -275,52 +275,7 @@ namespace _8QueensApp
             solution = null;
         }
 
-        public void assign_initial_settings()
-        {
-            population_size_initial = population_size_current;
-            fitness_initial = fitness_current;
-            crossover_position_initial = crossover_position_current;
-            mutation_setting_initial = mutation_setting_current;
-        }
 
-        //Session data - Initial data groupbox
-        private void set_initial_data_from_current()
-        {
-            population_size_initial = population_size_current;
-            fitness_initial = fitness_current;
-            crossover_position_initial = crossover_position_current;
-            mutation_setting_initial = mutation_setting_current;
-        }
-
-        public List<individual> get_individual_lists(int selector)
-        {
-            //1 = parent1, 2 = parent 2, 3 = child 1, 4 = child 2
-            if (selector == 1)
-                return a_parents;
-            if (selector == 2)
-                return b_parents;
-            if (selector == 3)
-                return a_children;
-            if (selector == 4)
-                return b_children;
-            if (selector == 5)
-                return parents;
-            if (selector == 6)
-                return actual_parents;
-            if (selector == 7)
-                return children;
-            if (selector == 8)
-                return mutations;
-            else return null;
-        }
-
-        public void setInitial()
-        {
-            population_size_current = 100;
-            fitness_current = 1;
-            crossover_position_current = 4;
-            mutation_setting_current = 0;
-        }
 
         public int[] getShuffledBoard()
         {
@@ -343,6 +298,49 @@ namespace _8QueensApp
             return x / calculate_from.Count;
         }
 
+        public void assign_initial_settings()
+        {
+            population_size_initial = population_size_current;
+            fitness_initial = fitness_current;
+            crossover_position_initial = crossover_position_current;
+            mutation_setting_initial = mutation_setting_current;
+        }
+        //Session data - Initial data groupbox
+        private void set_initial_data_from_current()
+        {
+            population_size_initial = population_size_current;
+            fitness_initial = fitness_current;
+            crossover_position_initial = crossover_position_current;
+            mutation_setting_initial = mutation_setting_current;
+        }
+        public List<individual> get_individual_lists(int selector)
+        {
+            //1 = parent1, 2 = parent 2, 3 = child 1, 4 = child 2
+            if (selector == 1)
+                return a_parents;
+            if (selector == 2)
+                return b_parents;
+            if (selector == 3)
+                return a_children;
+            if (selector == 4)
+                return b_children;
+            if (selector == 5)
+                return parents;
+            if (selector == 6)
+                return actual_parents;
+            if (selector == 7)
+                return children;
+            if (selector == 8)
+                return mutations;
+            else return null;
+        }
+        public void setInitial()
+        {
+            population_size_current = 100;
+            fitness_current = 1;
+            crossover_position_current = 4;
+            mutation_setting_current = 0;
+        }
         public void set_board(int [] to_set)
         {
             board = new individual(to_set);

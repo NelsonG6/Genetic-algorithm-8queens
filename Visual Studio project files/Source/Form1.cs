@@ -630,5 +630,16 @@ namespace _8QueensApp
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string text_to_check = checkpositionTextbox.Text;
+            int [] int_array_to_check = text_to_check.Split(' ').Select(n => Convert.ToInt32(n)).ToArray();
+            if (int_array_to_check.Length == 8)
+                view_individual(text_to_check.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), "validation textbox");
+            else
+                checkpositionTextbox.Text = "Invalid entry.";
+        }
+
     }
 }

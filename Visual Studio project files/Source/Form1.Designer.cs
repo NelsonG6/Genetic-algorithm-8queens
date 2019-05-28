@@ -213,6 +213,8 @@
             this.child_b_listbox = new System.Windows.Forms.ListBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkpositionTextbox = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -434,7 +436,7 @@
             // runIndefinitelyButton
             // 
             this.runIndefinitelyButton.Enabled = false;
-            this.runIndefinitelyButton.Location = new System.Drawing.Point(38, 80);
+            this.runIndefinitelyButton.Location = new System.Drawing.Point(38, 109);
             this.runIndefinitelyButton.Name = "runIndefinitelyButton";
             this.runIndefinitelyButton.Size = new System.Drawing.Size(251, 24);
             this.runIndefinitelyButton.TabIndex = 22;
@@ -516,23 +518,25 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.startOverButton);
+            this.groupBox2.Controls.Add(this.checkpositionTextbox);
             this.groupBox2.Controls.Add(this.iterateFromTextboxButton);
             this.groupBox2.Controls.Add(this.iterateCountCombobox);
             this.groupBox2.Controls.Add(this.iterateCountTextbox);
             this.groupBox2.Controls.Add(this.iterateFromDropdownButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.runIndefinitelyButton);
-            this.groupBox2.Location = new System.Drawing.Point(10, 769);
+            this.groupBox2.Location = new System.Drawing.Point(16, 750);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 153);
+            this.groupBox2.Size = new System.Drawing.Size(305, 179);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iterate";
             // 
             // startOverButton
             // 
-            this.startOverButton.Location = new System.Drawing.Point(38, 108);
+            this.startOverButton.Location = new System.Drawing.Point(38, 137);
             this.startOverButton.Name = "startOverButton";
             this.startOverButton.Size = new System.Drawing.Size(251, 24);
             this.startOverButton.TabIndex = 32;
@@ -1826,7 +1830,7 @@
             this.groupBox9.Controls.Add(this.ConfigureCrossoverPositionGroupbox);
             this.groupBox9.Location = new System.Drawing.Point(10, 254);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(305, 509);
+            this.groupBox9.Size = new System.Drawing.Size(305, 490);
             this.groupBox9.TabIndex = 113;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Configure";
@@ -2291,6 +2295,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // checkpositionTextbox
+            // 
+            this.checkpositionTextbox.Location = new System.Drawing.Point(38, 81);
+            this.checkpositionTextbox.Name = "checkpositionTextbox";
+            this.checkpositionTextbox.Size = new System.Drawing.Size(164, 22);
+            this.checkpositionTextbox.TabIndex = 127;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(220, 80);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(69, 23);
+            this.button3.TabIndex = 128;
+            this.button3.Text = "Assess this position";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2699,6 +2720,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TrackBar crossoverbar;
+        private System.Windows.Forms.TextBox checkpositionTextbox;
+        private System.Windows.Forms.Button button3;
     }
 }
 

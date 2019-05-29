@@ -8,6 +8,7 @@ To run the algorithm, set a number of times to iterate by clicking the iteration
 -View a parent or child by clicking on them in the listbox.
 -Change settings each step of the algoritm.
 
-ere's an example of how genetic algorithms work, from "rtificial Intelligence: A modern approach, third edition", by Stuart Russel and Peter Norvig. 
+[some picture](https://github.com/NelsonRomaine/Genetic-algorithm-8queens/blob/master/Readme/example2.png)
+Here's an example of how genetic algorithms work, from "rtificial Intelligence: A modern approach, third edition", by Stuart Russel and Peter Norvig. 
 
 -Thanks, and feel free to send me feedback.

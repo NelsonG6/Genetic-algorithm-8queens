@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _8QueensApp
@@ -36,21 +33,21 @@ namespace _8QueensApp
         //This is called by the shuffle and reset buttons.
         public void clearProgess()
         {
-            parent1listbox.Items.Clear();
-            parent1listbox.Items.Add("Parent data will populate here.");
+            Parent_1.Items.Clear();
+            Parent_1.Items.Add("Parent data will populate here.");
 
-            parent2listbox.Items.Clear();
-            parent2listbox.Items.Add("Parent data will populate here.");
+            Parent_2.Items.Clear();
+            Parent_2.Items.Add("Parent data will populate here.");
 
-            childlistbox.Items.Clear();
-            childlistbox.Items.Add("Child data will populate here.");
+            Child_1.Items.Clear();
+            Child_1.Items.Add("Child data will populate here.");
 
-            child_b_listbox.Items.Clear();
-            child_b_listbox.Items.Add("Child data will populate here.");
+            Child_2.Items.Clear();
+            Child_2.Items.Add("Child data will populate here.");
 
-            dropdownListbox.Items.Clear();
-            dropdownListbox.Items.Add("Data from the down-down");
-            dropdownListbox.Items.Add("will populate here.");
+            Dropdown_list.Items.Clear();
+            Dropdown_list.Items.Add("Data from the down-down");
+            Dropdown_list.Items.Add("will populate here.");
 
             //Clear everything in the session data groupbox
             clearSessionDataGroupbox();
@@ -105,7 +102,7 @@ namespace _8QueensApp
 
         private void updateTotalsGroupboxes()
         {
-            totalsgroupboxParentstextbox.Text = live_puzzle.get_eligible_parents().ToString(); //Start of "totals this step"
+            totalsgroupboxParentstextbox.Text = live_puzzle.get_eligible_parent_parent_current().ToString(); //Start of "totals this step"
             totalsFitnessOfParentsTextbox.Text = live_puzzle.get_avg_fitness_eligible_parents().ToString();
             sessiondataTotalsstepAcutalparentstextbox.Text = live_puzzle.get_actual_parents_count_current().ToString();
             sessionTotalsAvgfitness.Text = live_puzzle.get_avg_fitness_actual().ToString();
@@ -125,37 +122,59 @@ namespace _8QueensApp
         {
             updateTotalsGroupboxes(); //Update totals this step, and totals groupboxes
             int fitness = live_puzzle.get_best_child().fitness;
-            string solution_as_string = String.Join(" ", live_puzzle.get_best_child().solution_data);
-            positionSourceTextbox.Text =    "Generation " + live_puzzle.get_iteration_count().ToString() + 
-                                            " produced this best specimen [" + solution_as_string + 
-                                            "] with fitness " + fitness + "/28.";
+            if (!live_puzzle.has_algorithm_completed())
+            {
+                string solution_as_string = String.Join(" ", live_puzzle.get_best_child().solution_data);
+                positionSourceTextbox.Text = "Generation " + live_puzzle.get_iteration_count().ToString() +
+                                                " produced this best specimen [" + solution_as_string +
+                                                "] with fitness " + fitness + "/28.";
+            }
+            
             updateBoard();
 
             List<individual> temp_list;
             ListBox temp_listbox;
             string add_string;
 
-            parent1listbox.Items.Clear();
-            parent2listbox.Items.Clear();
-            childlistbox.Items.Clear();
-            child_b_listbox.Items.Clear();
-            dropdownListbox.Items.Clear();
-            dropdownListbox.Items.Add("Data from the drop-down");
-            dropdownListbox.Items.Add("will populate here.");
+            Parent_1.Items.Clear();
+            Parent_2.Items.Clear();
+            Child_1.Items.Clear();
+            Child_2.Items.Clear();
+            Dropdown_list.Items.Clear();
+
+            
 
             //Get our 4 lists we always handle.
             List<ListBox> listboxes = new List<ListBox>();
-            listboxes.Add(parent1listbox);
-            listboxes.Add(parent2listbox);
-            listboxes.Add(childlistbox);
-            listboxes.Add(child_b_listbox);
+            listboxes.Add(Parent_1);
+            listboxes.Add(Parent_2);
+            listboxes.Add(Child_1);
+            listboxes.Add(Child_2);
+
+            if (iterationdataDropdrown.SelectedIndex > 0)
+                listboxes.Add(Dropdown_list);
+            else
+            {
+                Dropdown_list.Items.Add("Data from the drop-down");
+                Dropdown_list.Items.Add("will populate here.");
+            }
 
             List<List<individual>> population_lists = new List<List<individual>>();
             population_lists.Add(live_puzzle.get_a_parents());
             population_lists.Add(live_puzzle.get_b_parents());
             population_lists.Add(live_puzzle.get_a_children());
             population_lists.Add(live_puzzle.get_b_children());
-            for(int i = 0; i < population_lists.Count; i++)
+
+            if ((string)iterationdataDropdrown.SelectedItem == "Eligible parents")
+                population_lists.Add(live_puzzle.get_eligible_parents());
+            else if ((string)iterationdataDropdrown.SelectedItem == "Actual parents")
+                population_lists.Add(live_puzzle.get_actual_parents());
+            else if ((string)iterationdataDropdrown.SelectedItem == "Children")
+                population_lists.Add(live_puzzle.get_children());
+            else if ((string)iterationdataDropdrown.SelectedItem == "Mutations")
+                population_lists.Add(live_puzzle.get_mutations());
+
+            for (int i = 0; i < population_lists.Count; i++)
             {
                 temp_list = population_lists[i];
                 temp_listbox = listboxes[i];
@@ -172,8 +191,7 @@ namespace _8QueensApp
         {
             live_puzzle.assign_initial_settings();
             initpoptextbox.Text = live_puzzle.get_population_size_initial().ToString();
-            sessiondataInitialsettingsFitnessimpactTextbox.Text = (live_puzzle.get_fitness_initial() * 100).ToString() + "%";
-            crossovertextbox.Text = live_puzzle.get_crossover_position_initial().ToString();
+            crossovertextbox.Text = live_puzzle.get_crossover_position_initial();
             mutationtextbox.Text = (live_puzzle.get_mutation_initial() * 100).ToString() + "%";
         }
 
@@ -187,7 +205,6 @@ namespace _8QueensApp
         private void clearInitialSettingsGroupbox()
         {
             initpoptextbox.Clear();
-            sessiondataInitialsettingsFitnessimpactTextbox.Clear();
             crossovertextbox.Clear();
             mutationtextbox.Clear();
         }
@@ -216,9 +233,8 @@ namespace _8QueensApp
         public void updateSettingsGroupbox()
         {
             SettingsPopulationSizeTextbox.Text = live_puzzle.get_population_size();
-            SettingsFitnessTextbox.Text = live_puzzle.get_fitness();
-            SettingsCrossoverTextbox.Text = live_puzzle.get_crossover_position().ToString();
             SettingsMutationTextbox.Text = live_puzzle.get_mutation();
+            SettingsCrossoverTextbox.Text = live_puzzle.get_crossover_position();
         }
 
         public void clearBoard()
@@ -252,6 +268,7 @@ namespace _8QueensApp
 
         private void resetConfigurationButton_Click(object sender, EventArgs e)
         {
+            //This isn't complete
             updateSettingsGroupbox();
             initpopulationbox.Text = "Enter here";
             mutationtextbox.Text = "Enter here";
@@ -263,6 +280,7 @@ namespace _8QueensApp
             live_puzzle.set_default_board();
             clearProgess();
             updateBoard();
+            positionSourceTextbox.Text = "Algorithm restarted.";
         }
 
         private void initpopdropdownSet_Click(object sender, EventArgs e)
@@ -294,21 +312,6 @@ namespace _8QueensApp
             }
             else
                 initpopulationbox.Text = "Invalid.";
-        }
-
-        private void setFitnessButton_Click(object sender, EventArgs e)
-        {
-            float x = fitnessTrackBar.Value / (float)2; //This makes index 0 = 0, index 1 = .5, and index 2 = 1.
-            live_puzzle.set_current_fitness(x);
-            x *= 100; //for percentage
-            SettingsFitnessTextbox.Text = x.ToString() + "%";
-        }
-
-        private void setCrossoverPositionButton_Click(object sender, EventArgs e)
-        {
-            int x = crossoverbar.Value + 1;
-            live_puzzle.set_current_crossover(x);
-            SettingsCrossoverTextbox.Text = x.ToString();
         }
 
         private void setMutationFromDropdownButton_Click(object sender, EventArgs e)
@@ -364,10 +367,6 @@ namespace _8QueensApp
 
         }
         private void shuffleBoardButton_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -531,54 +530,54 @@ namespace _8QueensApp
 
         private void viewParent1Button_Click(object sender, EventArgs e)
         {
-            if (parent1listbox.SelectedItem != null)
+            if (Parent_1.SelectedItem != null)
             {
-                int index_of_bracket = parent1listbox.SelectedItem.ToString().IndexOf(']');
-                string split_string = parent1listbox.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
+                int index_of_bracket = Parent_1.SelectedItem.ToString().IndexOf(']');
+                string split_string = Parent_1.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
                 view_individual(split_string.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), "Parent 1");
             }
         }
 
         private void viewParent2Button_Click(object sender, EventArgs e)
         {
-            if (parent2listbox.SelectedItem != null)
+            if (Parent_2.SelectedItem != null)
             {
-                int index_of_bracket = parent2listbox.SelectedItem.ToString().IndexOf(']');
-                int length = parent2listbox.SelectedItem.ToString().Length;
-                string split_string = parent2listbox.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
+                int index_of_bracket = Parent_2.SelectedItem.ToString().IndexOf(']');
+                int length = Parent_2.SelectedItem.ToString().Length;
+                string split_string = Parent_2.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
                 view_individual(split_string.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), "Parent 2");
             }
         }
 
         private void viewChildButton_Click(object sender, EventArgs e)
         {
-            if (childlistbox.SelectedItem != null)
+            if (Child_1.SelectedItem != null)
             {
-                int index_of_bracket = childlistbox.SelectedItem.ToString().IndexOf(']');
-                int length = childlistbox.SelectedItem.ToString().Length;
-                string split_string = childlistbox.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
+                int index_of_bracket = Child_1.SelectedItem.ToString().IndexOf(']');
+                int length = Child_1.SelectedItem.ToString().Length;
+                string split_string = Child_1.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
                 view_individual(split_string.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), "Child 1");
             }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (child_b_listbox.SelectedItem != null)
+            if (Child_2.SelectedItem != null)
             {
-                int index_of_bracket = child_b_listbox.SelectedItem.ToString().IndexOf(']');
-                int length = child_b_listbox.SelectedItem.ToString().Length;
-                string split_string = child_b_listbox.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
+                int index_of_bracket = Child_2.SelectedItem.ToString().IndexOf(']');
+                int length = Child_2.SelectedItem.ToString().Length;
+                string split_string = Child_2.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
                 view_individual(split_string.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), "Child 2");
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dropdownListbox.SelectedItem != null && live_puzzle.has_algorithm_started() == true)
+            if (Dropdown_list.SelectedItem != null && live_puzzle.has_algorithm_started() == true)
             {
-                int index_of_bracket = dropdownListbox.SelectedItem.ToString().IndexOf(']');
-                int length = dropdownListbox.SelectedItem.ToString().Length;
-                string split_string = dropdownListbox.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
+                int index_of_bracket = Dropdown_list.SelectedItem.ToString().IndexOf(']');
+                int length = Dropdown_list.SelectedItem.ToString().Length;
+                string split_string = Dropdown_list.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
                 view_individual(split_string.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), iterationdataDropdrown.SelectedItem.ToString());
             }
 
@@ -599,7 +598,7 @@ namespace _8QueensApp
                 return;
             List<individual> temp_list = null; 
 
-            dropdownListbox.Items.Clear();
+            Dropdown_list.Items.Clear();
             string selected_item = iterationdataDropdrown.SelectedItem.ToString();
             string add_string;
 
@@ -616,7 +615,7 @@ namespace _8QueensApp
             {
                 add_string = "[ID: " + temp_list[j].individual_ID.ToString() + "] ";
                 add_string += string.Join(" ", temp_list[j].solution_data);
-                dropdownListbox.Items.Add(add_string);
+                Dropdown_list.Items.Add(add_string);
             }
         }
 
@@ -641,5 +640,58 @@ namespace _8QueensApp
                 checkpositionTextbox.Text = "Invalid entry.";
         }
 
+        private void inputtextbox_clicked(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            control.Text = "";
+        }
+
+        private void listbox_click(object sender, EventArgs e)
+        {
+            ListBox control = (ListBox)sender;
+
+            string control_name = control.Name.Replace('_', ' ');
+
+            if (control.SelectedItem != null && live_puzzle.has_algorithm_started())
+            {
+                int index_of_bracket = control.SelectedItem.ToString().IndexOf(']');
+                string split_string = control.SelectedItem.ToString().Substring(index_of_bracket + 2, 15); //Ugly, but gets the ID part off.
+                view_individual(split_string.Split(' ').Select(n => Convert.ToInt32(n)).ToArray(), control_name);
+            }
+
+        }
+
+        private void crossover_position_changed(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex > -1)
+                comboBox2.Enabled = true;
+            else           
+                comboBox2.Enabled = false;
+
+            int low_position = Int32.Parse(comboBox1.SelectedItem.ToString());
+
+            for(int i = low_position; i < 7; i++)
+            {
+                comboBox2.Items.Add(i.ToString());
+            }
+            button1.Enabled = false;
+        }
+
+        private void crosover_position_highest_changed(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex > -1)
+                button1.Enabled = true;
+            else
+                button1.Enabled = false;
+
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int[] set_with = new int[2] { Int32.Parse(comboBox1.SelectedItem.ToString()), Int32.Parse(comboBox2.SelectedItem.ToString()) };
+            live_puzzle.set_current_crossover(set_with);
+            updateSettingsGroupbox();
+        }
     }
 }

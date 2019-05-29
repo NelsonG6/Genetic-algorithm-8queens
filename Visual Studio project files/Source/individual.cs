@@ -12,6 +12,7 @@ namespace _8QueensApp
         public int[] solution_data;
         public int individual_ID;
         public int fitness;
+        public string solution_string;
 
         public individual()
         {
@@ -22,6 +23,7 @@ namespace _8QueensApp
         {
             solution_data = to_set;
             assess_fitness();
+            solution_string = string.Join(" ", solution_data);
             individual_ID = -1; //This board should only exist because it was created from the listboxes. -1 ID will show this.
         }
 
@@ -31,6 +33,7 @@ namespace _8QueensApp
             solution_data = new int[set_from.solution_data.Length];
             set_from.solution_data.CopyTo(solution_data, 0);
             assess_fitness();
+            solution_string = string.Join(" ", solution_data);
         }
 
         public individual(int set_id, int[] set_data)
@@ -38,12 +41,15 @@ namespace _8QueensApp
             individual_ID = set_id;
             solution_data = set_data;
             assess_fitness();
+            solution_string = string.Join(" ", solution_data);
         }
 
-        private void assess_fitness()
+        public void assess_fitness()
         {
             //Count how many unique pairs of queens are not attacking one another.
             //i < 7 here because we dont iterate on the 8th slot
+            fitness = 0;
+
             for (int i = 0; i < 7; i++)
             {
                 for (int j = i + 1; j < 8; j++)

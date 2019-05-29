@@ -26,14 +26,12 @@ namespace _8QueensApp
 
         //Session data - Initial settings groupbox variables
         private int population_size_initial;
-        private float fitness_initial;
-        private int crossover_position_initial;
+        private int [] crossover_position_initial;
         private float mutation_setting_initial;
 
         //Settings groupbox variables (top left)
         private int population_size_current;
-        private float fitness_current;
-        private int crossover_position_current;
+        private int [] crossover_position_current;
         private float mutation_setting_current;
 
         //Session data - totals this step groupbox variables
@@ -126,7 +124,7 @@ namespace _8QueensApp
             //pointers to individuals
             //this could be a terrible way to solve this problem
             
-            //We'll take fitness percentage and store a number of these 100 pointers according to individual fitness/total fitness
+            //We'll take fitness percentage and store a number of these 10000 pointers according to individual fitness/total fitness
 
             random_num_to_individual = new List<individual>();
 
@@ -136,8 +134,10 @@ namespace _8QueensApp
                 total_fitness += parents[i].fitness;
             }
 
+            //Fill in our array with parents based on probability
             while(random_num_to_individual.Count < size_of_probability_array)
             {
+                //Get this parent's fitness, proportional to the combined fitness of all parents. Add one for rounding.
                 fitness_int = ((parents[parent_index].fitness * size_of_probability_array) / total_fitness) + 1;
                 while(fitness_int > 0)
                 {
@@ -160,6 +160,7 @@ namespace _8QueensApp
             individual parent_b;
             individual child_a;
             individual child_b = null;
+            int crossover_position;
 
             bool keep_looping = true;
 
@@ -193,18 +194,23 @@ namespace _8QueensApp
                     child_b = new individual(parent_b);
                     child_b.individual_ID = children.Count + 1; //+1 because we dont want to increase children count yet.
 
+                    crossover_position = random.Next(crossover_position_current[0], crossover_position_current[1] + 1);
+
                     //Genetic crossover
-                    Array.Copy( parent_b.solution_data, 
-                                crossover_position_current, 
-                                child_a.solution_data, 
-                                crossover_position_current, 
-                                8 - crossover_position_current);
+                    Array.Copy( parent_b.solution_data,
+                                crossover_position, 
+                                child_a.solution_data,
+                                crossover_position, 
+                                8 - crossover_position);
 
                     Array.Copy( parent_a.solution_data,
-                                crossover_position_current,
+                                crossover_position,
                                 child_b.solution_data,
-                                crossover_position_current,
-                                8 - crossover_position_current);
+                                crossover_position,
+                                8 - crossover_position);
+
+                    child_a.assess_fitness();
+                    child_b.assess_fitness();
 
                     children.Add(child_a);
                     a_children.Add(child_a);
@@ -284,6 +290,10 @@ namespace _8QueensApp
             {
                 to_return[i] = random.Next(0, 8);
             }
+
+            if(individual.assess_fitness(to_return) == 28)
+            //This puzzle was a solution, so we dont want it. That defeats the point of the algorithm.
+                return getShuffledBoard();
             return to_return;
         }
 
@@ -301,7 +311,6 @@ namespace _8QueensApp
         public void assign_initial_settings()
         {
             population_size_initial = population_size_current;
-            fitness_initial = fitness_current;
             crossover_position_initial = crossover_position_current;
             mutation_setting_initial = mutation_setting_current;
         }
@@ -309,7 +318,6 @@ namespace _8QueensApp
         private void set_initial_data_from_current()
         {
             population_size_initial = population_size_current;
-            fitness_initial = fitness_current;
             crossover_position_initial = crossover_position_current;
             mutation_setting_initial = mutation_setting_current;
         }
@@ -336,9 +344,8 @@ namespace _8QueensApp
         }
         public void setInitial()
         {
-            population_size_current = 100;
-            fitness_current = 1;
-            crossover_position_current = 4;
+            population_size_current = 10000;
+            crossover_position_current = new int[2] { 1, 6 };
             mutation_setting_current = 0;
         }
         public void set_board(int [] to_set)
@@ -361,8 +368,7 @@ namespace _8QueensApp
                 return "0%";
             return (mutation_setting_current * 100).ToString() + "%";
         }
-        public string get_crossover_position() { return crossover_position_current.ToString(); }
-        public string get_fitness() { if (fitness_current == 0) return "0%"; return (fitness_current * 100).ToString() + "%"; }
+        public string get_crossover_position() { return crossover_position_current[0].ToString() + ", " + crossover_position_current[1].ToString(); }
         private void rank_parents_by_fitness() { parents = (from s in parents orderby s.fitness descending select s).ToList(); }
         public bool has_algorithm_started()
         {
@@ -370,12 +376,12 @@ namespace _8QueensApp
                 return true;
             return false;
         }
+        public List<individual> get_eligible_parents() { return parents; }
         public string get_population_size() { return population_size_current.ToString(); }
         public int get_population_size_initial() { return population_size_initial; }
-        public float get_fitness_initial() { return fitness_initial; }
-        public int get_crossover_position_initial() { return crossover_position_initial; }
+        public string get_crossover_position_initial() { return crossover_position_initial[0].ToString() + ", " + crossover_position_initial[1].ToString(); }
         public float get_mutation_initial() { return mutation_setting_initial; }
-        public int get_eligible_parents() { return population_size_current; }
+        public int get_eligible_parent_parent_current() { return population_size_current; }
         public float get_avg_fitness_eligible_parents() { return avg_fitness_eligible_parents_current; }
         public int get_actual_parents_count_current() { return actual_parents.Count; }
         public float get_avg_fitness_actual() { return avg_fitness_actual_parents_current; }
@@ -391,8 +397,7 @@ namespace _8QueensApp
         public int get_mutations_total() { return mutation_count_total; }
         public void set_default_board() { board = new individual(); }
         public void set_current_population(int to_set) { population_size_current = to_set; }
-        public void set_current_fitness(float to_set) { fitness_current = to_set; }
-        public void set_current_crossover(int to_set) { crossover_position_current = to_set; }
+        public void set_current_crossover(int [] to_set) { crossover_position_current = to_set; }
         public void set_current_mutation(float to_set) { mutation_setting_current = to_set; }
         public individual get_best_child() { return children[0];}
         public individual get_board() { return board; }

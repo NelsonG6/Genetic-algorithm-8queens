@@ -32,10 +32,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.Parent_1 = new System.Windows.Forms.ListBox();
+            this.parent1listbox = new System.Windows.Forms.ListBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.Parent_2 = new System.Windows.Forms.ListBox();
-            this.Child_1 = new System.Windows.Forms.ListBox();
+            this.parent2listbox = new System.Windows.Forms.ListBox();
+            this.childlistbox = new System.Windows.Forms.ListBox();
             this.initpopdropdrown = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.initpopdropdownSet = new System.Windows.Forms.Button();
@@ -55,12 +55,28 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.mutationtextbox = new System.Windows.Forms.RichTextBox();
             this.crossovertextbox = new System.Windows.Forms.RichTextBox();
+            this.sessiondataInitialsettingsFitnessimpactTextbox = new System.Windows.Forms.RichTextBox();
             this.initpoptextbox = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.setFitnessButton = new System.Windows.Forms.Button();
+            this.fitnessTrackBar = new System.Windows.Forms.TrackBar();
             this.ConfigureCrossoverPositionGroupbox = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.setCrossoverPositionButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.crossoverbar = new System.Windows.Forms.TrackBar();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.sessionTotalsAvgfitness = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -69,6 +85,7 @@
             this.totalsFitnessOfChildrenTextbox = new System.Windows.Forms.RichTextBox();
             this.totalsFitnessOfParentsTextbox = new System.Windows.Forms.RichTextBox();
             this.totalsgroupboxMutationstextbox = new System.Windows.Forms.RichTextBox();
+            this.copyAllToClipboardButton = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -164,11 +181,16 @@
             this.setMutationFromDropdownButton = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.positionSourceTextbox = new System.Windows.Forms.TextBox();
+            this.viewParent1Button = new System.Windows.Forms.Button();
+            this.viewParent2Button = new System.Windows.Forms.Button();
+            this.viewChildButton = new System.Windows.Forms.Button();
             this.SettingsMutationTextbox = new System.Windows.Forms.RichTextBox();
             this.SettingsCrossoverTextbox = new System.Windows.Forms.RichTextBox();
+            this.SettingsFitnessTextbox = new System.Windows.Forms.RichTextBox();
             this.SettingsPopulationSizeTextbox = new System.Windows.Forms.RichTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -177,6 +199,7 @@
             this.finaltotalsgroupboxIterationstextbox = new System.Windows.Forms.RichTextBox();
             this.sessionTotalsAvgfitnesstextbox = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.finaltotalgroupboxParentstextbox = new System.Windows.Forms.RichTextBox();
             this.finaltotalGroupboxChildrentextbox = new System.Windows.Forms.RichTextBox();
@@ -184,15 +207,14 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.Dropdown_list = new System.Windows.Forms.ListBox();
+            this.dropdownListbox = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.iterationdataDropdrown = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.a1 = new System.Windows.Forms.PictureBox();
-            this.Child_2 = new System.Windows.Forms.ListBox();
+            this.child_b_listbox = new System.Windows.Forms.ListBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -200,7 +222,10 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessTrackBar)).BeginInit();
             this.ConfigureCrossoverPositionGroupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.crossoverbar)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.b1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.h1)).BeginInit();
@@ -320,18 +345,17 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // Parent_1
+            // parent1listbox
             // 
-            this.Parent_1.FormattingEnabled = true;
-            this.Parent_1.ItemHeight = 16;
-            this.Parent_1.Items.AddRange(new object[] {
+            this.parent1listbox.FormattingEnabled = true;
+            this.parent1listbox.ItemHeight = 16;
+            this.parent1listbox.Items.AddRange(new object[] {
             "Parent data will populate here."});
-            this.Parent_1.Location = new System.Drawing.Point(885, 366);
-            this.Parent_1.Name = "Parent_1";
-            this.Parent_1.Size = new System.Drawing.Size(200, 500);
-            this.Parent_1.TabIndex = 7;
-            this.Parent_1.Click += new System.EventHandler(this.listbox_click);
-            this.Parent_1.SelectedIndexChanged += new System.EventHandler(this.listbox_click);
+            this.parent1listbox.Location = new System.Drawing.Point(885, 366);
+            this.parent1listbox.Name = "parent1listbox";
+            this.parent1listbox.Size = new System.Drawing.Size(200, 468);
+            this.parent1listbox.TabIndex = 7;
+            this.parent1listbox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // pictureBox4
             // 
@@ -343,31 +367,27 @@
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
             // 
-            // Parent_2
+            // parent2listbox
             // 
-            this.Parent_2.FormattingEnabled = true;
-            this.Parent_2.ItemHeight = 16;
-            this.Parent_2.Items.AddRange(new object[] {
+            this.parent2listbox.FormattingEnabled = true;
+            this.parent2listbox.ItemHeight = 16;
+            this.parent2listbox.Items.AddRange(new object[] {
             "Parent data will populate here."});
-            this.Parent_2.Location = new System.Drawing.Point(1091, 364);
-            this.Parent_2.Name = "Parent_2";
-            this.Parent_2.Size = new System.Drawing.Size(200, 500);
-            this.Parent_2.TabIndex = 11;
-            this.Parent_2.Click += new System.EventHandler(this.listbox_click);
-            this.Parent_2.SelectedIndexChanged += new System.EventHandler(this.listbox_click);
+            this.parent2listbox.Location = new System.Drawing.Point(1091, 364);
+            this.parent2listbox.Name = "parent2listbox";
+            this.parent2listbox.Size = new System.Drawing.Size(200, 468);
+            this.parent2listbox.TabIndex = 11;
             // 
-            // Child_1
+            // childlistbox
             // 
-            this.Child_1.FormattingEnabled = true;
-            this.Child_1.ItemHeight = 16;
-            this.Child_1.Items.AddRange(new object[] {
+            this.childlistbox.FormattingEnabled = true;
+            this.childlistbox.ItemHeight = 16;
+            this.childlistbox.Items.AddRange(new object[] {
             "Child data will populate here."});
-            this.Child_1.Location = new System.Drawing.Point(1297, 364);
-            this.Child_1.Name = "Child_1";
-            this.Child_1.Size = new System.Drawing.Size(200, 500);
-            this.Child_1.TabIndex = 12;
-            this.Child_1.Click += new System.EventHandler(this.listbox_click);
-            this.Child_1.SelectedIndexChanged += new System.EventHandler(this.listbox_click);
+            this.childlistbox.Location = new System.Drawing.Point(1297, 364);
+            this.childlistbox.Name = "childlistbox";
+            this.childlistbox.Size = new System.Drawing.Size(200, 468);
+            this.childlistbox.TabIndex = 12;
             // 
             // initpopdropdrown
             // 
@@ -378,9 +398,7 @@
             "15",
             "100",
             "500",
-            "1000",
-            "10000",
-            "50000"});
+            "1000"});
             this.initpopdropdrown.Location = new System.Drawing.Point(40, 29);
             this.initpopdropdrown.Name = "initpopdropdrown";
             this.initpopdropdrown.Size = new System.Drawing.Size(124, 24);
@@ -414,7 +432,7 @@
             this.initpopulationbox.Size = new System.Drawing.Size(124, 24);
             this.initpopulationbox.TabIndex = 19;
             this.initpopulationbox.Text = "Enter here";
-            this.initpopulationbox.Click += new System.EventHandler(this.inputtextbox_clicked);
+            this.initpopulationbox.Click += new System.EventHandler(this.textbox_click_clear);
             // 
             // runIndefinitelyButton
             // 
@@ -435,7 +453,8 @@
             this.iterateCountTextbox.Size = new System.Drawing.Size(164, 24);
             this.iterateCountTextbox.TabIndex = 19;
             this.iterateCountTextbox.Text = "Enter here";
-            this.iterateCountTextbox.Click += new System.EventHandler(this.inputtextbox_clicked);
+            this.iterateCountTextbox.Click += new System.EventHandler(this.textbox_click_clear);
+            this.iterateCountTextbox.TextChanged += new System.EventHandler(this.iterateCountTextbox_TextChanged);
             // 
             // label1
             // 
@@ -502,25 +521,27 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.startOverButton);
+            this.groupBox2.Controls.Add(this.checkpositionTextbox);
             this.groupBox2.Controls.Add(this.iterateFromTextboxButton);
             this.groupBox2.Controls.Add(this.iterateCountCombobox);
             this.groupBox2.Controls.Add(this.iterateCountTextbox);
             this.groupBox2.Controls.Add(this.iterateFromDropdownButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.runIndefinitelyButton);
-            this.groupBox2.Location = new System.Drawing.Point(10, 590);
+            this.groupBox2.Location = new System.Drawing.Point(16, 750);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 179);
+            this.groupBox2.Size = new System.Drawing.Size(305, 179);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iterate";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(10, 807);
+            this.button3.Location = new System.Drawing.Point(220, 80);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(311, 23);
+            this.button3.Size = new System.Drawing.Size(69, 23);
             this.button3.TabIndex = 128;
             this.button3.Text = "Assess this position";
             this.button3.UseVisualStyleBackColor = true;
@@ -538,13 +559,12 @@
             // 
             // checkpositionTextbox
             // 
-            this.checkpositionTextbox.Location = new System.Drawing.Point(10, 785);
+            this.checkpositionTextbox.Location = new System.Drawing.Point(38, 81);
             this.checkpositionTextbox.Name = "checkpositionTextbox";
-            this.checkpositionTextbox.Size = new System.Drawing.Size(311, 22);
+            this.checkpositionTextbox.Size = new System.Drawing.Size(164, 22);
             this.checkpositionTextbox.TabIndex = 127;
-            this.checkpositionTextbox.Text = "Enter position to assess";
-            this.checkpositionTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.checkpositionTextbox.Click += new System.EventHandler(this.inputtextbox_clicked);
+            this.checkpositionTextbox.Text = "Enter here";
+            this.checkpositionTextbox.Click += new System.EventHandler(this.textbox_click_clear);
             // 
             // iterateFromTextboxButton
             // 
@@ -561,9 +581,11 @@
             this.groupBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.groupBox4.Controls.Add(this.mutationtextbox);
             this.groupBox4.Controls.Add(this.crossovertextbox);
+            this.groupBox4.Controls.Add(this.sessiondataInitialsettingsFitnessimpactTextbox);
             this.groupBox4.Controls.Add(this.initpoptextbox);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Location = new System.Drawing.Point(16, 22);
             this.groupBox4.Name = "groupBox4";
@@ -575,7 +597,7 @@
             // 
             // mutationtextbox
             // 
-            this.mutationtextbox.Location = new System.Drawing.Point(25, 138);
+            this.mutationtextbox.Location = new System.Drawing.Point(25, 192);
             this.mutationtextbox.Multiline = false;
             this.mutationtextbox.Name = "mutationtextbox";
             this.mutationtextbox.ReadOnly = true;
@@ -585,13 +607,23 @@
             // 
             // crossovertextbox
             // 
-            this.crossovertextbox.Location = new System.Drawing.Point(25, 91);
+            this.crossovertextbox.Location = new System.Drawing.Point(25, 146);
             this.crossovertextbox.Multiline = false;
             this.crossovertextbox.Name = "crossovertextbox";
             this.crossovertextbox.ReadOnly = true;
             this.crossovertextbox.Size = new System.Drawing.Size(237, 24);
             this.crossovertextbox.TabIndex = 6;
             this.crossovertextbox.Text = "";
+            // 
+            // sessiondataInitialsettingsFitnessimpactTextbox
+            // 
+            this.sessiondataInitialsettingsFitnessimpactTextbox.Location = new System.Drawing.Point(25, 96);
+            this.sessiondataInitialsettingsFitnessimpactTextbox.Multiline = false;
+            this.sessiondataInitialsettingsFitnessimpactTextbox.Name = "sessiondataInitialsettingsFitnessimpactTextbox";
+            this.sessiondataInitialsettingsFitnessimpactTextbox.ReadOnly = true;
+            this.sessiondataInitialsettingsFitnessimpactTextbox.Size = new System.Drawing.Size(237, 24);
+            this.sessiondataInitialsettingsFitnessimpactTextbox.TabIndex = 5;
+            this.sessiondataInitialsettingsFitnessimpactTextbox.Text = "";
             // 
             // initpoptextbox
             // 
@@ -606,7 +638,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 118);
+            this.label12.Location = new System.Drawing.Point(22, 172);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(62, 17);
             this.label12.TabIndex = 3;
@@ -615,11 +647,20 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 71);
+            this.label11.Location = new System.Drawing.Point(22, 126);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(166, 17);
+            this.label11.Size = new System.Drawing.Size(125, 17);
             this.label11.TabIndex = 2;
-            this.label11.Text = "Crossover position range";
+            this.label11.Text = "Crossover position";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 17);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Fitness impact";
             // 
             // label9
             // 
@@ -630,19 +671,90 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Population size";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.setFitnessButton);
+            this.groupBox3.Controls.Add(this.fitnessTrackBar);
+            this.groupBox3.Enabled = false;
+            this.groupBox3.Location = new System.Drawing.Point(38, 132);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(261, 86);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Impact of fitness on pairing parents";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Enabled = false;
+            this.label33.Location = new System.Drawing.Point(153, 58);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(44, 17);
+            this.label33.TabIndex = 24;
+            this.label33.Text = "100%";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Enabled = false;
+            this.label31.Location = new System.Drawing.Point(86, 58);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(36, 17);
+            this.label31.TabIndex = 23;
+            this.label31.Text = "50%";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Enabled = false;
+            this.label17.Location = new System.Drawing.Point(19, 58);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(28, 17);
+            this.label17.TabIndex = 22;
+            this.label17.Text = "0%";
+            // 
+            // setFitnessButton
+            // 
+            this.setFitnessButton.Enabled = false;
+            this.setFitnessButton.Location = new System.Drawing.Point(182, 21);
+            this.setFitnessButton.Name = "setFitnessButton";
+            this.setFitnessButton.Size = new System.Drawing.Size(64, 24);
+            this.setFitnessButton.TabIndex = 22;
+            this.setFitnessButton.Text = "Set";
+            this.setFitnessButton.UseVisualStyleBackColor = true;
+            this.setFitnessButton.Click += new System.EventHandler(this.setFitnessButton_Click);
+            // 
+            // fitnessTrackBar
+            // 
+            this.fitnessTrackBar.Enabled = false;
+            this.fitnessTrackBar.Location = new System.Drawing.Point(12, 21);
+            this.fitnessTrackBar.Maximum = 2;
+            this.fitnessTrackBar.Name = "fitnessTrackBar";
+            this.fitnessTrackBar.Size = new System.Drawing.Size(177, 56);
+            this.fitnessTrackBar.TabIndex = 22;
+            // 
             // ConfigureCrossoverPositionGroupbox
             // 
             this.ConfigureCrossoverPositionGroupbox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.button1);
-            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.comboBox2);
-            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.comboBox1);
             this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label32);
-            this.ConfigureCrossoverPositionGroupbox.Location = new System.Drawing.Point(38, 132);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.setCrossoverPositionButton);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label8);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label7);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label2);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label6);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label4);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.label5);
+            this.ConfigureCrossoverPositionGroupbox.Controls.Add(this.crossoverbar);
+            this.ConfigureCrossoverPositionGroupbox.Location = new System.Drawing.Point(38, 224);
             this.ConfigureCrossoverPositionGroupbox.Name = "ConfigureCrossoverPositionGroupbox";
             this.ConfigureCrossoverPositionGroupbox.Size = new System.Drawing.Size(261, 94);
             this.ConfigureCrossoverPositionGroupbox.TabIndex = 28;
             this.ConfigureCrossoverPositionGroupbox.TabStop = false;
-            this.ConfigureCrossoverPositionGroupbox.Text = "Crossover positions";
+            this.ConfigureCrossoverPositionGroupbox.Text = "Crossover position (array index)";
             // 
             // label32
             // 
@@ -652,6 +764,79 @@
             this.label32.Size = new System.Drawing.Size(16, 17);
             this.label32.TabIndex = 30;
             this.label32.Text = "1";
+            // 
+            // setCrossoverPositionButton
+            // 
+            this.setCrossoverPositionButton.Location = new System.Drawing.Point(182, 21);
+            this.setCrossoverPositionButton.Name = "setCrossoverPositionButton";
+            this.setCrossoverPositionButton.Size = new System.Drawing.Size(64, 24);
+            this.setCrossoverPositionButton.TabIndex = 21;
+            this.setCrossoverPositionButton.Text = "Set";
+            this.setCrossoverPositionButton.UseVisualStyleBackColor = true;
+            this.setCrossoverPositionButton.Click += new System.EventHandler(this.setCrossoverPositionButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(136, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(16, 17);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "5";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(164, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "6";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(107, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "4";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(50, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(16, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "2";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(79, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "3";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // crossoverbar
+            // 
+            this.crossoverbar.Location = new System.Drawing.Point(12, 21);
+            this.crossoverbar.Maximum = 5;
+            this.crossoverbar.Name = "crossoverbar";
+            this.crossoverbar.Size = new System.Drawing.Size(177, 56);
+            this.crossoverbar.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -663,6 +848,7 @@
             this.groupBox8.Controls.Add(this.totalsFitnessOfChildrenTextbox);
             this.groupBox8.Controls.Add(this.totalsFitnessOfParentsTextbox);
             this.groupBox8.Controls.Add(this.totalsgroupboxMutationstextbox);
+            this.groupBox8.Controls.Add(this.copyAllToClipboardButton);
             this.groupBox8.Controls.Add(this.label36);
             this.groupBox8.Controls.Add(this.label35);
             this.groupBox8.Controls.Add(this.label23);
@@ -745,6 +931,15 @@
             this.totalsgroupboxMutationstextbox.Size = new System.Drawing.Size(144, 24);
             this.totalsgroupboxMutationstextbox.TabIndex = 49;
             this.totalsgroupboxMutationstextbox.Text = "";
+            // 
+            // copyAllToClipboardButton
+            // 
+            this.copyAllToClipboardButton.Location = new System.Drawing.Point(193, 189);
+            this.copyAllToClipboardButton.Name = "copyAllToClipboardButton";
+            this.copyAllToClipboardButton.Size = new System.Drawing.Size(145, 27);
+            this.copyAllToClipboardButton.TabIndex = 31;
+            this.copyAllToClipboardButton.Text = "Copy to clipboard";
+            this.copyAllToClipboardButton.UseVisualStyleBackColor = true;
             // 
             // label36
             // 
@@ -1653,10 +1848,11 @@
             this.groupBox9.Controls.Add(this.resetConfigurationButton);
             this.groupBox9.Controls.Add(this.groupBox6);
             this.groupBox9.Controls.Add(this.groupBox1);
+            this.groupBox9.Controls.Add(this.groupBox3);
             this.groupBox9.Controls.Add(this.ConfigureCrossoverPositionGroupbox);
-            this.groupBox9.Location = new System.Drawing.Point(10, 195);
+            this.groupBox9.Location = new System.Drawing.Point(10, 254);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(307, 389);
+            this.groupBox9.Size = new System.Drawing.Size(305, 490);
             this.groupBox9.TabIndex = 113;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Configure";
@@ -1664,11 +1860,11 @@
             // resetConfigurationButton
             // 
             this.resetConfigurationButton.Enabled = false;
-            this.resetConfigurationButton.Location = new System.Drawing.Point(38, 332);
+            this.resetConfigurationButton.Location = new System.Drawing.Point(38, 427);
             this.resetConfigurationButton.Name = "resetConfigurationButton";
             this.resetConfigurationButton.Size = new System.Drawing.Size(261, 43);
             this.resetConfigurationButton.TabIndex = 31;
-            this.resetConfigurationButton.Text = "Reset configuration (not finished)";
+            this.resetConfigurationButton.Text = "Reset configuration";
             this.resetConfigurationButton.UseVisualStyleBackColor = true;
             this.resetConfigurationButton.Click += new System.EventHandler(this.resetConfigurationButton_Click);
             // 
@@ -1681,7 +1877,7 @@
             this.groupBox6.Controls.Add(this.setMutationFromDropdownButton);
             this.groupBox6.Controls.Add(this.label34);
             this.groupBox6.Enabled = false;
-            this.groupBox6.Location = new System.Drawing.Point(38, 232);
+            this.groupBox6.Location = new System.Drawing.Point(38, 324);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(261, 94);
             this.groupBox6.TabIndex = 26;
@@ -1725,7 +1921,7 @@
             this.configmutationTextbox.Size = new System.Drawing.Size(124, 24);
             this.configmutationTextbox.TabIndex = 19;
             this.configmutationTextbox.Text = "Enter here";
-            this.configmutationTextbox.Click += new System.EventHandler(this.inputtextbox_clicked);
+            this.configmutationTextbox.Click += new System.EventHandler(this.textbox_click_clear);
             // 
             // setMutationFromDropdownButton
             // 
@@ -1758,19 +1954,49 @@
             this.positionSourceTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.positionSourceTextbox.TextChanged += new System.EventHandler(this.indiatePositionSourceTextbox_TextChanged);
             // 
+            // viewParent1Button
+            // 
+            this.viewParent1Button.Location = new System.Drawing.Point(885, 840);
+            this.viewParent1Button.Name = "viewParent1Button";
+            this.viewParent1Button.Size = new System.Drawing.Size(200, 31);
+            this.viewParent1Button.TabIndex = 115;
+            this.viewParent1Button.Text = "View";
+            this.viewParent1Button.UseVisualStyleBackColor = true;
+            this.viewParent1Button.Click += new System.EventHandler(this.viewParent1Button_Click);
+            // 
+            // viewParent2Button
+            // 
+            this.viewParent2Button.Location = new System.Drawing.Point(1091, 840);
+            this.viewParent2Button.Name = "viewParent2Button";
+            this.viewParent2Button.Size = new System.Drawing.Size(200, 31);
+            this.viewParent2Button.TabIndex = 116;
+            this.viewParent2Button.Text = "View";
+            this.viewParent2Button.UseVisualStyleBackColor = true;
+            this.viewParent2Button.Click += new System.EventHandler(this.viewParent2Button_Click);
+            // 
+            // viewChildButton
+            // 
+            this.viewChildButton.Location = new System.Drawing.Point(1297, 840);
+            this.viewChildButton.Name = "viewChildButton";
+            this.viewChildButton.Size = new System.Drawing.Size(200, 31);
+            this.viewChildButton.TabIndex = 117;
+            this.viewChildButton.Text = "View";
+            this.viewChildButton.UseVisualStyleBackColor = true;
+            this.viewChildButton.Click += new System.EventHandler(this.viewChildButton_Click);
+            // 
             // SettingsMutationTextbox
             // 
-            this.SettingsMutationTextbox.Location = new System.Drawing.Point(36, 136);
+            this.SettingsMutationTextbox.Location = new System.Drawing.Point(38, 185);
             this.SettingsMutationTextbox.Multiline = false;
             this.SettingsMutationTextbox.Name = "SettingsMutationTextbox";
             this.SettingsMutationTextbox.ReadOnly = true;
-            this.SettingsMutationTextbox.Size = new System.Drawing.Size(248, 24);
+            this.SettingsMutationTextbox.Size = new System.Drawing.Size(246, 24);
             this.SettingsMutationTextbox.TabIndex = 7;
             this.SettingsMutationTextbox.Text = "";
             // 
             // SettingsCrossoverTextbox
             // 
-            this.SettingsCrossoverTextbox.Location = new System.Drawing.Point(36, 86);
+            this.SettingsCrossoverTextbox.Location = new System.Drawing.Point(38, 139);
             this.SettingsCrossoverTextbox.Multiline = false;
             this.SettingsCrossoverTextbox.Name = "SettingsCrossoverTextbox";
             this.SettingsCrossoverTextbox.ReadOnly = true;
@@ -1778,9 +2004,19 @@
             this.SettingsCrossoverTextbox.TabIndex = 6;
             this.SettingsCrossoverTextbox.Text = "";
             // 
+            // SettingsFitnessTextbox
+            // 
+            this.SettingsFitnessTextbox.Location = new System.Drawing.Point(38, 89);
+            this.SettingsFitnessTextbox.Multiline = false;
+            this.SettingsFitnessTextbox.Name = "SettingsFitnessTextbox";
+            this.SettingsFitnessTextbox.ReadOnly = true;
+            this.SettingsFitnessTextbox.Size = new System.Drawing.Size(246, 24);
+            this.SettingsFitnessTextbox.TabIndex = 5;
+            this.SettingsFitnessTextbox.Text = "";
+            // 
             // SettingsPopulationSizeTextbox
             // 
-            this.SettingsPopulationSizeTextbox.Location = new System.Drawing.Point(36, 42);
+            this.SettingsPopulationSizeTextbox.Location = new System.Drawing.Point(38, 42);
             this.SettingsPopulationSizeTextbox.Multiline = false;
             this.SettingsPopulationSizeTextbox.Name = "SettingsPopulationSizeTextbox";
             this.SettingsPopulationSizeTextbox.ReadOnly = true;
@@ -1791,7 +2027,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(35, 116);
+            this.label19.Location = new System.Drawing.Point(35, 165);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 17);
             this.label19.TabIndex = 3;
@@ -1800,16 +2036,25 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(33, 66);
+            this.label20.Location = new System.Drawing.Point(35, 119);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(166, 17);
+            this.label20.Size = new System.Drawing.Size(125, 17);
             this.label20.TabIndex = 2;
-            this.label20.Text = "Crossover position range";
+            this.label20.Text = "Crossover position";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(35, 69);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(98, 17);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Fitness impact";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(33, 22);
+            this.label22.Location = new System.Drawing.Point(35, 22);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(104, 17);
             this.label22.TabIndex = 0;
@@ -1836,6 +2081,7 @@
             this.groupBox11.Controls.Add(this.finaltotalsgroupboxIterationstextbox);
             this.groupBox11.Controls.Add(this.sessionTotalsAvgfitnesstextbox);
             this.groupBox11.Controls.Add(this.label15);
+            this.groupBox11.Controls.Add(this.button6);
             this.groupBox11.Controls.Add(this.label24);
             this.groupBox11.Controls.Add(this.finaltotalgroupboxParentstextbox);
             this.groupBox11.Controls.Add(this.finaltotalGroupboxChildrentextbox);
@@ -1898,6 +2144,15 @@
             this.label15.TabIndex = 54;
             this.label15.Text = "Avg. fitness increase";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(184, 188);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(144, 27);
+            this.button6.TabIndex = 31;
+            this.button6.Text = "Copy to clipboard";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -1923,7 +2178,7 @@
             this.finaltotalGroupboxChildrentextbox.Multiline = false;
             this.finaltotalGroupboxChildrentextbox.Name = "finaltotalGroupboxChildrentextbox";
             this.finaltotalGroupboxChildrentextbox.ReadOnly = true;
-            this.finaltotalGroupboxChildrentextbox.Size = new System.Drawing.Size(145, 24);
+            this.finaltotalGroupboxChildrentextbox.Size = new System.Drawing.Size(144, 24);
             this.finaltotalGroupboxChildrentextbox.TabIndex = 45;
             this.finaltotalGroupboxChildrentextbox.Text = "";
             // 
@@ -1964,19 +2219,27 @@
             this.label30.TabIndex = 9;
             this.label30.Text = "Eligible parents";
             // 
-            // Dropdown_list
+            // dropdownListbox
             // 
-            this.Dropdown_list.FormattingEnabled = true;
-            this.Dropdown_list.ItemHeight = 16;
-            this.Dropdown_list.Items.AddRange(new object[] {
+            this.dropdownListbox.FormattingEnabled = true;
+            this.dropdownListbox.ItemHeight = 16;
+            this.dropdownListbox.Items.AddRange(new object[] {
             "Data from the drop-down",
             "will populate here."});
-            this.Dropdown_list.Location = new System.Drawing.Point(1709, 364);
-            this.Dropdown_list.Name = "Dropdown_list";
-            this.Dropdown_list.Size = new System.Drawing.Size(200, 500);
-            this.Dropdown_list.TabIndex = 121;
-            this.Dropdown_list.Click += new System.EventHandler(this.listbox_click);
-            this.Dropdown_list.SelectedIndexChanged += new System.EventHandler(this.listbox_click);
+            this.dropdownListbox.Location = new System.Drawing.Point(1709, 364);
+            this.dropdownListbox.Name = "dropdownListbox";
+            this.dropdownListbox.Size = new System.Drawing.Size(200, 468);
+            this.dropdownListbox.TabIndex = 121;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1709, 838);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 31);
+            this.button1.TabIndex = 122;
+            this.button1.Text = "View";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // iterationdataDropdrown
             // 
@@ -1998,13 +2261,15 @@
             this.groupBox7.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox7.Controls.Add(this.SettingsMutationTextbox);
             this.groupBox7.Controls.Add(this.SettingsCrossoverTextbox);
+            this.groupBox7.Controls.Add(this.SettingsFitnessTextbox);
             this.groupBox7.Controls.Add(this.SettingsPopulationSizeTextbox);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.label22);
             this.groupBox7.Location = new System.Drawing.Point(10, 12);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(305, 177);
+            this.groupBox7.Size = new System.Drawing.Size(305, 222);
             this.groupBox7.TabIndex = 29;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Settings";
@@ -2022,18 +2287,16 @@
             this.a1.TabStop = false;
             this.a1.Click += new System.EventHandler(this.a1_Click);
             // 
-            // Child_2
+            // child_b_listbox
             // 
-            this.Child_2.FormattingEnabled = true;
-            this.Child_2.ItemHeight = 16;
-            this.Child_2.Items.AddRange(new object[] {
+            this.child_b_listbox.FormattingEnabled = true;
+            this.child_b_listbox.ItemHeight = 16;
+            this.child_b_listbox.Items.AddRange(new object[] {
             "Child data will populate here."});
-            this.Child_2.Location = new System.Drawing.Point(1503, 364);
-            this.Child_2.Name = "Child_2";
-            this.Child_2.Size = new System.Drawing.Size(200, 500);
-            this.Child_2.TabIndex = 125;
-            this.Child_2.Click += new System.EventHandler(this.listbox_click);
-            this.Child_2.SelectedIndexChanged += new System.EventHandler(this.listbox_click);
+            this.child_b_listbox.Location = new System.Drawing.Point(1503, 364);
+            this.child_b_listbox.Name = "child_b_listbox";
+            this.child_b_listbox.Size = new System.Drawing.Size(200, 468);
+            this.child_b_listbox.TabIndex = 125;
             // 
             // pictureBox5
             // 
@@ -2045,44 +2308,15 @@
             this.pictureBox5.TabIndex = 124;
             this.pictureBox5.TabStop = false;
             // 
-            // comboBox1
+            // button2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.comboBox1.Location = new System.Drawing.Point(40, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 31;
-            this.comboBox1.Text = "Lowest position";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.crossover_position_changed);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(40, 53);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 32;
-            this.comboBox2.Text = "Highest position";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.crosover_position_highest_changed);
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(182, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 56);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Set";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button2.Location = new System.Drawing.Point(1499, 839);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 31);
+            this.button2.TabIndex = 126;
+            this.button2.Text = "View";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Form1
             // 
@@ -2091,14 +2325,17 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1935, 934);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.Child_2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.child_b_listbox);
             this.Controls.Add(this.iterationdataDropdrown);
-            this.Controls.Add(this.checkpositionTextbox);
-            this.Controls.Add(this.Dropdown_list);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dropdownListbox);
             this.Controls.Add(this.a1);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.viewChildButton);
+            this.Controls.Add(this.viewParent2Button);
+            this.Controls.Add(this.viewParent1Button);
             this.Controls.Add(this.positionSourceTextbox);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.pictureBox84);
@@ -2181,9 +2418,9 @@
             this.Controls.Add(this.c1);
             this.Controls.Add(this.b1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.Child_1);
-            this.Controls.Add(this.Parent_2);
-            this.Controls.Add(this.Parent_1);
+            this.Controls.Add(this.childlistbox);
+            this.Controls.Add(this.parent2listbox);
+            this.Controls.Add(this.parent1listbox);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
@@ -2202,8 +2439,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessTrackBar)).EndInit();
             this.ConfigureCrossoverPositionGroupbox.ResumeLayout(false);
             this.ConfigureCrossoverPositionGroupbox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.crossoverbar)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.b1)).EndInit();
@@ -2304,10 +2545,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ListBox Parent_1;
+        private System.Windows.Forms.ListBox parent1listbox;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.ListBox Parent_2;
-        private System.Windows.Forms.ListBox Child_1;
+        private System.Windows.Forms.ListBox parent2listbox;
+        private System.Windows.Forms.ListBox childlistbox;
         private System.Windows.Forms.ComboBox initpopdropdrown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button initpopdropdownSet;
@@ -2320,12 +2561,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox ConfigureCrossoverPositionGroupbox;
         private System.Windows.Forms.RichTextBox mutationtextbox;
         private System.Windows.Forms.RichTextBox crossovertextbox;
+        private System.Windows.Forms.RichTextBox sessiondataInitialsettingsFitnessimpactTextbox;
         private System.Windows.Forms.RichTextBox initpoptextbox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button setpopfromtext;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -2411,26 +2655,40 @@
         private System.Windows.Forms.PictureBox pictureBox84;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox positionSourceTextbox;
+        private System.Windows.Forms.Button setCrossoverPositionButton;
         private System.Windows.Forms.RichTextBox totalsgroupboxParentstextbox;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button viewParent1Button;
+        private System.Windows.Forms.Button viewParent2Button;
+        private System.Windows.Forms.Button viewChildButton;
         private System.Windows.Forms.RichTextBox SettingsMutationTextbox;
         private System.Windows.Forms.RichTextBox SettingsCrossoverTextbox;
+        private System.Windows.Forms.RichTextBox SettingsFitnessTextbox;
         private System.Windows.Forms.RichTextBox SettingsPopulationSizeTextbox;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.Button copyAllToClipboardButton;
         private System.Windows.Forms.RichTextBox totalsgroupboxMutationstextbox;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ListBox Dropdown_list;
+        private System.Windows.Forms.ListBox dropdownListbox;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox iterationdataDropdrown;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.RichTextBox finaltotalsgroupboxIterationstextbox;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.RichTextBox finaltotalgroupboxParentstextbox;
         private System.Windows.Forms.RichTextBox finaltotalsgroupboxMutationstextbox;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button setFitnessButton;
+        private System.Windows.Forms.TrackBar fitnessTrackBar;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button setMutationFromTextboxButton;
         private System.Windows.Forms.ComboBox configmutationCombobox;
@@ -2447,8 +2705,9 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.RichTextBox sessionTotalsAvgfitnesstextbox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListBox Child_2;
+        private System.Windows.Forms.ListBox child_b_listbox;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox sessionTotalsAvgfitness;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.RichTextBox sessiondataTotalsstepAcutalparentstextbox;
@@ -2460,11 +2719,15 @@
         private System.Windows.Forms.RichTextBox finaltotalGroupboxChildrentextbox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TrackBar crossoverbar;
         private System.Windows.Forms.TextBox checkpositionTextbox;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

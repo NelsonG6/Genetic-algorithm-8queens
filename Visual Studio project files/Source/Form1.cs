@@ -86,17 +86,21 @@ namespace _8QueensApp
 
             for (int i = 0; i < iteration_count; i++)
             {
+                string turn_number = live_puzzle.get_iteration_count().ToString();
                 if (live_puzzle.algorithm_step())
                 {
-                    string turn_number = live_puzzle.get_iteration_count().ToString();
                     string child_number = live_puzzle.get_solution().individual_ID.ToString();
                     positionSourceTextbox.Text = "Child number " + child_number + " on turn " + turn_number + " was a solution.";
                     updateAfterAlgorithmStep(); //Update listboxes
-                    updateBoard();
+                    
                     return;
                 }
+                else //A solution wasn't found.                
+                    positionSourceTextbox.Text = "Completed iteration number " + turn_number + ".";
+
+                updateBoard();
             }
-            //A solution wasn't found.
+            
             updateAfterAlgorithmStep(); //Update listboxes
         }
 
@@ -347,110 +351,6 @@ namespace _8QueensApp
                 configmutationTextbox.Text = "Invalid.";
         }
 
-
-
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void a1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void shuffleBoardButton_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox21_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox15_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox16_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox17_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox18_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox19_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox20_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox14_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox61_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void a8_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-    
-        private void groupBox8_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void initpopdropdrown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         public void initializePictureboxBoard()
         {
             board_pictureboxes = new List<PictureBox[]>();
@@ -525,8 +425,6 @@ namespace _8QueensApp
             board_pictureboxes[7][6] = h7;
             board_pictureboxes[7][7] = h8;
         }
-        private void applyAllConfigSettingsButton_Click(object sender, EventArgs e) { }
-        private void indiatePositionSourceTextbox_TextChanged(object sender, EventArgs e) { }
 
         private void viewParent1Button_Click(object sender, EventArgs e)
         {
@@ -622,13 +520,9 @@ namespace _8QueensApp
         private void runIndefinitelyButton_Click(object sender, EventArgs e)
         {
             while (live_puzzle.has_algorithm_completed() != true)
-            { iterate_algorithm(1); }
+            { iterate_algorithm(1000000); } //big number
         }
 
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {

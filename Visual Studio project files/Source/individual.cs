@@ -83,5 +83,19 @@ namespace _8QueensApp
             }
             return 28 - attack_count;
         }
+
+        public bool mutate(float mutation_percent, Random random)
+        {
+            int float_times_one_hundred = (int)(mutation_percent * 100);
+            int mutate_index = random.Next(0, 8);
+            int mutate_into = random.Next(0, 8);
+            if (mutation_percent > 0)
+                if (random.Next(1, 100 + 1) <= float_times_one_hundred)
+                {
+                    solution_data[mutate_index] = mutate_into;
+                    return true;
+                }
+            return false;
+        }
     }
 }

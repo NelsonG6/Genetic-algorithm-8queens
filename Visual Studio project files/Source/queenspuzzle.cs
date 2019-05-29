@@ -41,7 +41,6 @@ namespace _8QueensApp
         private float avg_fitness_actual_parents_current;
         //Children count is obtained from the children list
         private float avg_fitness_children_current;
-        private int mutation_count_current;
 
         //Session data - totals groupbox variables
         private int eligible_parents_total;
@@ -102,7 +101,6 @@ namespace _8QueensApp
             avg_fitness_actual_parents_current = 0;
             //Children count is children.count
             avg_fitness_children_current = 0;
-            mutation_count_current = 0;
 
             //Our lists for displaying in the listboxes
             a_parents = new List<individual>();
@@ -209,6 +207,11 @@ namespace _8QueensApp
                                 crossover_position,
                                 8 - crossover_position);
 
+                    if (child_a.mutate(mutation_setting_current, random))
+                        mutations.Add(child_a);
+                    if( child_b.mutate(mutation_setting_current, random))
+                        mutations.Add(child_b);
+
                     child_a.assess_fitness();
                     child_b.assess_fitness();
 
@@ -234,11 +237,13 @@ namespace _8QueensApp
                     add_sibling = false;   
                 }
             } //We now have children.
-            updateAllTotals();
+            
 
-            //Sort children
-            children = (from s in children orderby s.fitness descending select s).ToList();
-            board = children[0];
+            sortLists();
+            board = children[0]; //Set the board to the best child
+
+
+            updateAllTotals();
 
             //If keep_looping is false, a solution was found.
             if (!keep_looping)
@@ -266,7 +271,7 @@ namespace _8QueensApp
             avg_fitness_increase = avg_fitness_increase / iterations;
             actual_parents_total += actual_parents.Count;
             children_count_total += children.Count;
-            mutation_count_total += mutation_count_current;
+            mutation_count_total += mutations.Count;
         }
 
         public void new_puzzle()
@@ -281,7 +286,20 @@ namespace _8QueensApp
             solution = null;
         }
 
+        private void sortLists()
+        {
+            //Sort children
+            children = (from s in children orderby s.fitness descending select s).ToList();
 
+            //Sort mutations
+            mutations = (from s in mutations orderby s.fitness descending select s).ToList();
+
+            //Sort eligible parents
+            parents = (from s in parents orderby s.fitness descending select s).ToList();
+
+            //Sort actual parents
+            actual_parents = (from s in parents orderby s.fitness descending select s).ToList();
+        }
 
         public int[] getShuffledBoard()
         {
@@ -346,7 +364,7 @@ namespace _8QueensApp
         {
             population_size_current = 10000;
             crossover_position_current = new int[2] { 1, 6 };
-            mutation_setting_current = 0;
+            mutation_setting_current = .25F;
         }
         public void set_board(int [] to_set)
         {

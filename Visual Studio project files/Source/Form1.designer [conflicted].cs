@@ -48,10 +48,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.setpopfromtext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.startOverButton = new System.Windows.Forms.Button();
-            this.checkpositionTextbox = new System.Windows.Forms.TextBox();
             this.iterateFromTextboxButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkpositionTextbox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.mutationtextbox = new System.Windows.Forms.RichTextBox();
             this.crossovertextbox = new System.Windows.Forms.RichTextBox();
@@ -60,6 +60,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.ConfigureCrossoverPositionGroupbox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.sessionTotalsAvgfitness = new System.Windows.Forms.RichTextBox();
@@ -190,9 +193,6 @@
             this.a1 = new System.Windows.Forms.PictureBox();
             this.Child_2 = new System.Windows.Forms.ListBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -418,7 +418,6 @@
             // 
             // runIndefinitelyButton
             // 
-            this.runIndefinitelyButton.Enabled = false;
             this.runIndefinitelyButton.Location = new System.Drawing.Point(38, 109);
             this.runIndefinitelyButton.Name = "runIndefinitelyButton";
             this.runIndefinitelyButton.Size = new System.Drawing.Size(251, 24);
@@ -516,16 +515,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iterate";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(10, 807);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(311, 23);
-            this.button3.TabIndex = 128;
-            this.button3.Text = "Assess this position";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // startOverButton
             // 
             this.startOverButton.Location = new System.Drawing.Point(38, 137);
@@ -536,16 +525,6 @@
             this.startOverButton.UseVisualStyleBackColor = true;
             this.startOverButton.Click += new System.EventHandler(this.startOverButton_Click);
             // 
-            // checkpositionTextbox
-            // 
-            this.checkpositionTextbox.Location = new System.Drawing.Point(10, 785);
-            this.checkpositionTextbox.Name = "checkpositionTextbox";
-            this.checkpositionTextbox.Size = new System.Drawing.Size(311, 22);
-            this.checkpositionTextbox.TabIndex = 127;
-            this.checkpositionTextbox.Text = "Enter position to assess";
-            this.checkpositionTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.checkpositionTextbox.Click += new System.EventHandler(this.inputtextbox_clicked);
-            // 
             // iterateFromTextboxButton
             // 
             this.iterateFromTextboxButton.Location = new System.Drawing.Point(220, 50);
@@ -555,6 +534,26 @@
             this.iterateFromTextboxButton.Text = "Step";
             this.iterateFromTextboxButton.UseVisualStyleBackColor = true;
             this.iterateFromTextboxButton.Click += new System.EventHandler(this.iterateFromTextboxButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 807);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(311, 23);
+            this.button3.TabIndex = 128;
+            this.button3.Text = "Assess this position";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // checkpositionTextbox
+            // 
+            this.checkpositionTextbox.Location = new System.Drawing.Point(10, 785);
+            this.checkpositionTextbox.Name = "checkpositionTextbox";
+            this.checkpositionTextbox.Size = new System.Drawing.Size(311, 22);
+            this.checkpositionTextbox.TabIndex = 127;
+            this.checkpositionTextbox.Text = "Enter position to assess";
+            this.checkpositionTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.checkpositionTextbox.Click += new System.EventHandler(this.inputtextbox_clicked);
             // 
             // groupBox4
             // 
@@ -643,6 +642,45 @@
             this.ConfigureCrossoverPositionGroupbox.TabIndex = 28;
             this.ConfigureCrossoverPositionGroupbox.TabStop = false;
             this.ConfigureCrossoverPositionGroupbox.Text = "Crossover positions";
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(182, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 56);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Set";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Enabled = false;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(40, 53);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 32;
+            this.comboBox2.Text = "Highest position";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.crosover_position_highest_changed);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.comboBox1.Location = new System.Drawing.Point(40, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.Text = "Lowest position";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.crossover_position_changed);
             // 
             // label32
             // 
@@ -2044,45 +2082,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(204, 66);
             this.pictureBox5.TabIndex = 124;
             this.pictureBox5.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.comboBox1.Location = new System.Drawing.Point(40, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 31;
-            this.comboBox1.Text = "Lowest position";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.crossover_position_changed);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(40, 53);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 32;
-            this.comboBox2.Text = "Highest position";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.crosover_position_highest_changed);
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(182, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 56);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Set";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 

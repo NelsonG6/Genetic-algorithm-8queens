@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _8QueensApp.Properties
+namespace _8Queens.Properties
 {
 
 

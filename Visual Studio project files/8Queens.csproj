@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{063E36F1-856D-464D-BB11-CD44FFC225B7}</ProjectGuid>
+    <ProjectGuid>{F7B7D711-BC84-4C84-8AA7-1F5FAB523C1B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_8QueensApp</RootNamespace>
-    <AssemblyName>8QueensApp</AssemblyName>
+    <RootNamespace>_8Queens</RootNamespace>
+    <AssemblyName>8Queens</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Form1.cs">
+    <Compile Include="Source\Generated\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Form1.designer.cs">
+    <Compile Include="Source\Generated\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Generated\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\individual.cs" />
-    <Compile Include="Source\Program.cs" />
     <Compile Include="Source\queenspuzzle.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,8 +64,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Source\Form1.resx">
+    <EmbeddedResource Include="Source\Generated\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -79,9 +80,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

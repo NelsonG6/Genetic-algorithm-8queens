@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _8QueensApp
+namespace _8Queens
 {
     //This is the object for managing 8-queens puzzle processes.
     class individual

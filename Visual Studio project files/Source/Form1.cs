@@ -86,17 +86,22 @@ namespace _8QueensApp
 
             for (int i = 0; i < iteration_count; i++)
             {
-                string turn_number = live_puzzle.get_iteration_count().ToString();
+                string turn_number;
                 if (live_puzzle.algorithm_step())
                 {
                     string child_number = live_puzzle.get_solution().individual_ID.ToString();
+                    turn_number = live_puzzle.get_iteration_count().ToString();
                     positionSourceTextbox.Text = "Child number " + child_number + " on turn " + turn_number + " was a solution.";
                     updateAfterAlgorithmStep(); //Update listboxes
                     
                     return;
                 }
                 else //A solution wasn't found.                
+                {
+                    turn_number = live_puzzle.get_iteration_count().ToString();
                     positionSourceTextbox.Text = "Completed iteration number " + turn_number + ".";
+                }
+                    
 
                 updateBoard();
             }

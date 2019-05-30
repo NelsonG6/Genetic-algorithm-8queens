@@ -298,7 +298,7 @@ namespace _8QueensApp
             parents = (from s in parents orderby s.fitness descending select s).ToList();
 
             //Sort actual parents
-            actual_parents = (from s in parents orderby s.fitness descending select s).ToList();
+            actual_parents = (from s in actual_parents orderby s.fitness descending select s).ToList();
         }
 
         public int[] getShuffledBoard()

@@ -1,3 +1,4 @@
-* To run the algorithm, set a number of times to iterate by clicking the iteration drop down menu, or type some desired number of iterations into the textbox. Click "step", and the algorithm will run. You can also click "run indefinitely". The default settings always find a solution. 
-* There is no protection in place from running a large population, or preventing the algorithm from running endlessly with stale phenotypes, that is, too few genes present in the gene pool.  If the program stops responding, close it.
-* View a parent or child by clicking on them in the listbox.
+# Use these files to look at the source code and modify the program.
+* You'll have to copy the images folder to your bin\debug folder.
+* You can open the .sln file, or the .csproj file. It should do the same thing regardless, and open the solution with the project contained.
+* The genetic algorithm code is under the *source* folder.

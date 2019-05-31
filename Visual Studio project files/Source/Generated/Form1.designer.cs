@@ -336,9 +336,9 @@
             // 
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(300, 84);
+            this.pictureBox4.Location = new System.Drawing.Point(128, -17);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(616, 200);
+            this.pictureBox4.Size = new System.Drawing.Size(740, 261);
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
             // 
@@ -508,9 +508,9 @@
             this.groupBox2.Controls.Add(this.iterateFromDropdownButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.runIndefinitelyButton);
-            this.groupBox2.Location = new System.Drawing.Point(12, 543);
+            this.groupBox2.Location = new System.Drawing.Point(14, 723);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 179);
+            this.groupBox2.Size = new System.Drawing.Size(305, 144);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iterate";
@@ -537,7 +537,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 766);
+            this.button3.Location = new System.Drawing.Point(8, 912);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(311, 23);
             this.button3.TabIndex = 128;
@@ -548,7 +548,7 @@
             // 
             // checkpositionTextbox
             // 
-            this.checkpositionTextbox.Location = new System.Drawing.Point(6, 744);
+            this.checkpositionTextbox.Location = new System.Drawing.Point(8, 890);
             this.checkpositionTextbox.Name = "checkpositionTextbox";
             this.checkpositionTextbox.Size = new System.Drawing.Size(311, 22);
             this.checkpositionTextbox.TabIndex = 127;
@@ -1678,7 +1678,7 @@
             this.groupBox9.Controls.Add(this.groupBox6);
             this.groupBox9.Controls.Add(this.groupBox1);
             this.groupBox9.Controls.Add(this.ConfigureCrossoverPositionGroupbox);
-            this.groupBox9.Location = new System.Drawing.Point(10, 195);
+            this.groupBox9.Location = new System.Drawing.Point(12, 375);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(307, 342);
             this.groupBox9.TabIndex = 113;
@@ -1756,7 +1756,7 @@
             // 
             // positionSourceTextbox
             // 
-            this.positionSourceTextbox.Location = new System.Drawing.Point(364, 328);
+            this.positionSourceTextbox.Location = new System.Drawing.Point(363, 280);
             this.positionSourceTextbox.Name = "positionSourceTextbox";
             this.positionSourceTextbox.ReadOnly = true;
             this.positionSourceTextbox.Size = new System.Drawing.Size(503, 22);
@@ -2008,7 +2008,7 @@
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Location = new System.Drawing.Point(10, 12);
+            this.groupBox7.Location = new System.Drawing.Point(12, 192);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(305, 177);
             this.groupBox7.TabIndex = 29;

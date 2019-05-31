@@ -159,7 +159,6 @@
             this.pictureBox83 = new System.Windows.Forms.PictureBox();
             this.pictureBox84 = new System.Windows.Forms.PictureBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.resetConfigurationButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.setMutationFromTextboxButton = new System.Windows.Forms.Button();
             this.configmutationCombobox = new System.Windows.Forms.ComboBox();
@@ -417,7 +416,7 @@
             // 
             // runIndefinitelyButton
             // 
-            this.runIndefinitelyButton.Location = new System.Drawing.Point(38, 109);
+            this.runIndefinitelyButton.Location = new System.Drawing.Point(38, 80);
             this.runIndefinitelyButton.Name = "runIndefinitelyButton";
             this.runIndefinitelyButton.Size = new System.Drawing.Size(251, 24);
             this.runIndefinitelyButton.TabIndex = 22;
@@ -456,6 +455,7 @@
             // 
             // iterateCountCombobox
             // 
+            this.iterateCountCombobox.DisplayMember = "string";
             this.iterateCountCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.iterateCountCombobox.FormattingEnabled = true;
             this.iterateCountCombobox.Items.AddRange(new object[] {
@@ -471,6 +471,7 @@
             this.iterateCountCombobox.Name = "iterateCountCombobox";
             this.iterateCountCombobox.Size = new System.Drawing.Size(164, 24);
             this.iterateCountCombobox.TabIndex = 13;
+            this.iterateCountCombobox.ValueMember = "string";
             // 
             // groupBox1
             // 
@@ -507,16 +508,16 @@
             this.groupBox2.Controls.Add(this.iterateFromDropdownButton);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.runIndefinitelyButton);
-            this.groupBox2.Location = new System.Drawing.Point(10, 590);
+            this.groupBox2.Location = new System.Drawing.Point(12, 543);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 179);
+            this.groupBox2.Size = new System.Drawing.Size(305, 179);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iterate";
             // 
             // startOverButton
             // 
-            this.startOverButton.Location = new System.Drawing.Point(38, 137);
+            this.startOverButton.Location = new System.Drawing.Point(38, 108);
             this.startOverButton.Name = "startOverButton";
             this.startOverButton.Size = new System.Drawing.Size(251, 24);
             this.startOverButton.TabIndex = 32;
@@ -536,22 +537,24 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(10, 844);
+            this.button3.Location = new System.Drawing.Point(6, 766);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(311, 23);
             this.button3.TabIndex = 128;
             this.button3.Text = "Assess this position";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // checkpositionTextbox
             // 
-            this.checkpositionTextbox.Location = new System.Drawing.Point(10, 822);
+            this.checkpositionTextbox.Location = new System.Drawing.Point(6, 744);
             this.checkpositionTextbox.Name = "checkpositionTextbox";
             this.checkpositionTextbox.Size = new System.Drawing.Size(311, 22);
             this.checkpositionTextbox.TabIndex = 127;
             this.checkpositionTextbox.Text = "Enter position to assess";
             this.checkpositionTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.checkpositionTextbox.Visible = false;
             this.checkpositionTextbox.Click += new System.EventHandler(this.inputtextbox_clicked);
             // 
             // groupBox4
@@ -1672,27 +1675,15 @@
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox9.Controls.Add(this.resetConfigurationButton);
             this.groupBox9.Controls.Add(this.groupBox6);
             this.groupBox9.Controls.Add(this.groupBox1);
             this.groupBox9.Controls.Add(this.ConfigureCrossoverPositionGroupbox);
             this.groupBox9.Location = new System.Drawing.Point(10, 195);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(307, 389);
+            this.groupBox9.Size = new System.Drawing.Size(307, 342);
             this.groupBox9.TabIndex = 113;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Configure";
-            // 
-            // resetConfigurationButton
-            // 
-            this.resetConfigurationButton.Enabled = false;
-            this.resetConfigurationButton.Location = new System.Drawing.Point(38, 332);
-            this.resetConfigurationButton.Name = "resetConfigurationButton";
-            this.resetConfigurationButton.Size = new System.Drawing.Size(261, 43);
-            this.resetConfigurationButton.TabIndex = 31;
-            this.resetConfigurationButton.Text = "Reset configuration (not finished)";
-            this.resetConfigurationButton.UseVisualStyleBackColor = true;
-            this.resetConfigurationButton.Click += new System.EventHandler(this.resetConfigurationButton_Click);
             // 
             // groupBox6
             // 
@@ -2410,7 +2401,6 @@
         private System.Windows.Forms.RichTextBox configmutationTextbox;
         private System.Windows.Forms.Button setMutationFromDropdownButton;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Button resetConfigurationButton;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.PictureBox a1;
         private System.Windows.Forms.Button startOverButton;

@@ -24,6 +24,7 @@ namespace _8Queens
             updateSettingsGroupbox();
             updateBoard();
             positionSourceTextbox.Text = "Program launched. Algorithm has not started.";
+            iterateCountCombobox.SelectedIndex = 0;
 
             WindowState = FormWindowState.Maximized; //maximize our form window
 
@@ -227,6 +228,7 @@ namespace _8Queens
             sessionTotalsAvgfitness.Clear();
             totalsFitnessOfChildrenTextbox.Clear();
             totalsgroupboxMutationstextbox.Clear();
+            sessiondataTotalsstepAcutalparentstextbox.Clear();
         }
 
         private void clearTotalsGroupbox()
